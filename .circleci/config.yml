@@ -1,19 +1,9 @@
 jobs:
   build:
     docker:
-      - image: docker:stable-git
+      - image: docker:ruby
     steps:
       - checkout
       - run:
-          name: verify SHA
-          command: |
-            echo "Validating SHA"
-            sha=$(git rev-parse HEAD)
-            echo "Sha: $sha"
-            firstletter=${sha:0:1}
-            if [ $firstletter = "0" ]; then
-              echo "Seems fine to me"
-            else
-              echo "Commit SHA must begin with 0"
-              exit 1
-            fi
+          name: Verifying Block SHA against difficulty factor
+          command: ruby sha_verify.rb

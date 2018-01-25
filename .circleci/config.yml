@@ -6,4 +6,4 @@ jobs:
       - checkout
       - run:
           name: Verifying Block SHA against difficulty factor
-          command: ruby sha_verify.rb
+          command: ruby .circleci/sha_verify.rb

@@ -9,13 +9,13 @@ jobs:
           command: echo Hello, world.
 
 run:
+  name: SHA verification
   shell: /bin/sh
   command: |
     echo "Validating SHA"
     sha=$(git rev-parse HEAD)
     echo "Sha: $sha"
     firstletter=${sha:0:1}
-
     if [ $firstletter = "0" ]; then
       echo "Seems fine to me"
     else

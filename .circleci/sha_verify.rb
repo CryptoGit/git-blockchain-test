@@ -1,5 +1,5 @@
 current_sha = `git rev-parse HEAD`.strip.to_i(16)
-difficulty_sha = `/bin/sh ../difficulty_factor`.strip.to_i(16)
+difficulty_sha = `/bin/sh .circleci/difficulty_factor`.strip.to_i(16)
 
 puts "Block SHA: #{current_sha}"
 puts "Difficulty SHA: #{difficulty_sha}"

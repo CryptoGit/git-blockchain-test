@@ -2,6 +2,8 @@ MINERS_REWARD = 50
 
 transactions = `cat txn`.strip.lines.compact
 
+puts "Verifying transactions"
+
 # currently we only support miners rewards, no user->user transactions
 exit 1 unless transactions.length == 1
 

@@ -7,3 +7,6 @@ jobs:
       - run:
           name: Verifying Block SHA against difficulty factor
           command: ruby .circleci/sha_verify.rb
+      - run:
+          name: Validating transactions
+          command: ruby .circleci/txn_check.rb
